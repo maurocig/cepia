@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+  twClass: string;
+}
+
+const { href, title, body, twClass } = Astro.props;
+---
+
+<div class={`p-4 flex flex-col gap-4 ${twClass}`}>
+  <a href={href} class="space-y-3">
+    <h2 class="text-xl font-quicksand font-bold">
+      {title}
+      <!-- <span>&rarr;</span> -->
+    </h2>
+    <p class="text-lg">
+      {body}
+    </p>
+  </a>
+</div>

@@ -1,0 +1,35 @@
+---
+import "@fontsource/bree-serif";
+import "@fontsource-variable/quicksand";
+import Nav from "../components/Nav.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const navLinks = [
+  { label: "Nosotros", href: "/quienes-somos" },
+  { label: "Nuestro equipo", href: "/equipo" },
+  { label: "Galería", href: "/galeria" },
+  { label: "Contacto", href: "/contacto" },
+];
+---
+
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="h-full">
+    <!-- <Nav links={navLinks} /> -->
+    <slot />
+  </body>
+</html>
+
+<!-- <style is:global></style> -->

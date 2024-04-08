@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import imageIcon from "/icons/imageIcon.svg?raw";
+
+// import "@fontsource/bree-serif";
+---
+
+<Layout title="CEPIA – Inicio">
+  <main class="space-y-4 w-full min-h-[100vh] bg-slate-100 flex flex-col">
+    <!-- <h1 class="font-bree">cepia</h1> -->
+    <div
+      class="grid grid-cols-12 gap-4 lg:gap-6 w-full min-h-[100vh] h-full grid-rows-8 p-4 lg:p-6"
+    >
+      <div
+        class="col-span-8 p-4 h-full bg-green-400 space-y-2 w-full row-span-2 rounded-md"
+      >
+        <h1 class="text-2xl font-quicksand font-bold">
+          Centro Psicopedagógico Integral de Atlántida
+        </h1>
+        <p class="text-lg">
+          Somos una institución dedicada a brindar atención integral a niños,
+          adolescentes y jóvenes en riesgo o con dificultades en su desarrollo.
+          Desde 1998, hemos sido impulsados por un grupo de profesionales
+          comprometidos con la salud y la educación.
+        </p>
+      </div>
+      <div
+        class="col-span-4 row-span-4 h-full bg-cyan-400 w-full rounded-md text-lg p-4 space-y-3"
+      >
+        <h2 class="text-xl font-bold font-quicksand">Objetivos</h2>
+        <p class="text-lg">
+          En CE.P.I.A., nuestra misión es brindar atención integral y de calidad
+          a niños, adolescentes y jóvenes en situación de vulnerabilidad o con
+          dificultades en su desarrollo. Nos comprometemos a trabajar de manera
+          interdisciplinaria para promover su bienestar físico, emocional y
+          social, así como para sensibilizar y educar a la comunidad sobre las
+          necesidades educativas especiales y la importancia de la inclusión.
+        </p>
+      </div>
+      <div
+        class="col-span-4 row-span-2 h-full bg-indigo-400 w-full rounded-md bg-[url('/images/juegos-de-mesa.jpg')] bg-cover bg-center bg-no-repeat"
+      >
+      </div>
+      <div
+        class="col-span-4 row-span-2 h-full bg-amber-300 w-full rounded-md bg-[url('/images/mesa-collage.jpg')] bg-cover bg-center bg-no-repeat"
+      >
+      </div>
+      <Card
+        twClass="col-span-4 row-span-4 h-full bg-red-400 w-full rounded-md"
+        title="Nuestros servicios"
+        body="Ofrecemos una amplia gama de servicios para niños, adolescentes y jóvenes con necesidades educativas especiales, incluyendo evaluación psicopedagógica, terapia individual y grupal, talleres de habilidades sociales, apoyo escolar y orientación a padres."
+        href="/servicios"
+      />
+      <div
+        class="col-span-3 row-span-2 h-full bg-cyan-400 w-full rounded-md flex flex-col items-center justify-center"
+      >
+        <Fragment set:html={imageIcon} />
+        <span class="text-lg"> Galería </span>
+      </div>
+      <div
+        class="col-span-5 row-span-4 h-full bg-indigo-400 w-full rounded-md bg-[url('/images/chenga-colores.jpg')] bg-cover bg-center bg-no-repeat"
+      >
+      </div>
+      <div
+        class="col-span-3 row-span-2 h-full bg-cyan-400 w-full rounded-md bg-[url('/images/mano-pintada.jpg')] bg-cover bg-center bg-no-repeat"
+      >
+      </div>
+    </div>
+  </main>
+</Layout>
