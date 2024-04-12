@@ -2,22 +2,17 @@
 import "@fontsource/bree-serif";
 import "@fontsource-variable/quicksand";
 import Nav from "../components/Nav.astro";
+import isActive from "../components/IsActive.astro";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-const navLinks = [
-  { label: "Nosotros", href: "/quienes-somos" },
-  { label: "Nuestro equipo", href: "/equipo" },
-  { label: "Galería", href: "/galeria" },
-  { label: "Contacto", href: "/contacto" },
-];
 ---
 
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full bg-slate-200">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -27,7 +22,8 @@ const navLinks = [
     <title>{title}</title>
   </head>
   <body class="h-full">
-    <!-- <Nav links={navLinks} /> -->
+    <Nav />
+    <div class="h-[70px]"></div>
     <slot />
   </body>
 </html>

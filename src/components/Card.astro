@@ -1,22 +1,30 @@
 ---
 interface Props {
   title: string;
-  body: string;
+  // body: string;
   href: string;
-  twClass: string;
+  twClass?: string;
 }
 
-const { href, title, body, twClass } = Astro.props;
+const { href, title, twClass } = Astro.props;
 ---
 
-<div class={`p-4 flex flex-col gap-4 ${twClass}`}>
+<!-- <div
+  class={`p-4 flex flex-col gap-4 transition duration-250 hover:border-opacity-40 rounded-md border-2 border-opacity-0 border-gray-400 ${twClass}`}
+> -->
+<div
+  class="p-4 lg:p-6 flex flex-col gap-4 hover:bg-slate-100/50 hover:shadow-md rounded-lg transition-all duration-500"
+>
   <a href={href} class="space-y-3">
     <h2 class="text-xl font-quicksand font-bold">
       {title}
-      <!-- <span>&rarr;</span> -->
+      <span>&rarr;</span>
     </h2>
-    <p class="text-lg">
-      {body}
-    </p>
+    <div class="h-full">
+      <p class="">
+        <!-- {body} -->
+        <slot />
+      </p>
+    </div>
   </a>
 </div>
