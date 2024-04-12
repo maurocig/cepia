@@ -1,0 +1,49 @@
+---
+import LogoNav from "./LogoNav.astro";
+
+const navLinks = [
+  // { label: "Inicio", href: "/", active: isActive("/") },
+  { label: "Quienes somos", href: "/nosotros", active: isActive("/nosotros") },
+  { label: "Servicios", href: "/servicios", active: isActive("/servicios") },
+  { label: "Nuestro equipo", href: "/equipo", active: isActive("/equipo") },
+  {
+    label: "Beneficiarios",
+    href: "/beneficiarios",
+    active: isActive("/beneficiarios"),
+  },
+  { label: "Contacto", href: "/contacto", active: isActive("/contacto") },
+];
+
+function isActive(path: string) {
+  return new URL(Astro.request.url).pathname === path;
+}
+
+type NavLink = {
+  label: string;
+  href: string;
+  active: boolean;
+};
+---
+
+<nav
+  class="flex justify-center h-[70px] px-8 fixed bg-slate-100/40 backdrop-blur w-full shadow-md"
+>
+  <div class="flex justify-between w-full max-w-[1000px]">
+    <LogoNav />
+    <ul class="flex gap-8 h-full text-nowrap w-fit items-center font-quicksand">
+      {
+        navLinks.map((navItem: NavLink) =>
+          navItem.active ? (
+            <li class="underline ">
+              <a href={navItem.href}>{navItem.label}</a>
+            </li>
+          ) : (
+            <li>
+              <a href={navItem.href}>{navItem.label}</a>
+            </li>
+          )
+        )
+      }
+    </ul>
+  </div>
+</nav>

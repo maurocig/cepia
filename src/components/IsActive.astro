@@ -1,0 +1,10 @@
+<script>
+  type Props = {
+    path: string;
+  };
+  const { path } = Astro.props;
+
+  export default function isActive({ path }: Props) {
+    return Astro.request.url === path;
+  }
+</script>

@@ -1,0 +1,15 @@
+---
+import type { ElementType } from "react";
+import { RWBalancer } from "./RWBalancer";
+
+interface Props {
+  ratio: number;
+  as?: ElementType;
+}
+
+const { ...props } = Astro.props as Props;
+---
+
+<RWBalancer {...props}>
+  <slot />
+</RWBalancer>
