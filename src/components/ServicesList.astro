@@ -1,0 +1,31 @@
+---
+import { Diamond } from 'lucide-astro';
+
+const { services } = Astro.props;
+type Service = {
+  text: string;
+};
+---
+
+<div
+  class="rounded-lg border border-gray-900/10 bg-slate-100 p-3 shadow-md md:p-6"
+>
+  <h2 class="font-rubik mb-4 text-2xl">Objetivos</h2>
+  <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+    {
+      services.map((service: Service) => {
+        return (
+          <li class="flex shrink-0 flex-row items-start gap-2">
+            <Diamond
+              size={13}
+              stroke-width={4}
+              class="mt-[5px] shrink-0 text-emerald-500"
+              width="20"
+            />
+            {service.text}
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

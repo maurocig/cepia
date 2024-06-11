@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MemberCard from '../components/MemberCard.astro';
+import { team } from '../../public/js/team';
+import type { TeamMember } from '../types';
+---
+
+<Layout title="Nuestro equipo – CEPIA">
+  <main class="mx-auto mt-8 max-w-[1000px] space-y-8 px-4 pb-8 lg:px-0">
+    <div>
+      <h1 class="mb-4 text-start font-quicksand text-4xl font-semibold">
+        Nuestro equipo
+      </h1>
+      <p class="mb-8 text-lg lg:w-[70%]">
+        En CEPIA contamos con un equipo interdisciplinario de profesionales
+        especializados en distintas áreas dentro de la terapia del desarrollo y
+        aprendizaje.
+        <!-- </p>
+      <p class="text-lg lg:w-[60%]"> -->
+        <!-- Esto nos permite brindar un apoyo integral y personalizado para cada paciente, -->
+        <!-- atendiendo sus necesidades específicas y facilitando su desarrollo. -->
+        <!-- </p> -->
+      </p>
+      <div
+        class="grid-auto-rows grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3"
+      >
+        {
+          team.map((member: TeamMember) => {
+            return (
+              <MemberCard
+                name={member.name}
+                role={member.role}
+                especialization={member.especialization}
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </main>
+</Layout>

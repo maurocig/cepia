@@ -1,17 +1,16 @@
 ---
-import LogoNav from "./LogoNav.astro";
+import LogoNav from './LogoNav.astro';
 
 const navLinks = [
-  // { label: "Inicio", href: "/", active: isActive("/") },
-  { label: "Quienes somos", href: "/nosotros", active: isActive("/nosotros") },
-  { label: "Servicios", href: "/servicios", active: isActive("/servicios") },
-  { label: "Nuestro equipo", href: "/equipo", active: isActive("/equipo") },
+  { label: 'Inicio', href: '/', active: isActive('/') },
+  { label: 'Servicios', href: '/servicios', active: isActive('/servicios') },
+  { label: 'Nosotros', href: '/equipo', active: isActive('/equipo') },
   {
-    label: "Beneficiarios",
-    href: "/beneficiarios",
-    active: isActive("/beneficiarios"),
+    label: 'Prestadores',
+    href: '/prestadores',
+    active: isActive('/prestadores'),
   },
-  { label: "Contacto", href: "/contacto", active: isActive("/contacto") },
+  { label: 'Contacto', href: '/contacto', active: isActive('/contacto') },
 ];
 
 function isActive(path: string) {
@@ -26,24 +25,24 @@ type NavLink = {
 ---
 
 <nav
-  class="flex justify-center h-[70px] px-8 fixed bg-slate-100/40 text-nowrap backdrop-blur w-full shadow-md"
+  class="fixed flex h-[70px] w-full justify-center bg-slate-100/70 px-8 shadow-md backdrop-blur"
 >
-  <div class="flex justify-between w-full max-w-[1000px] text-nowrap">
+  <div class="flex w-full max-w-[1000px] justify-between text-nowrap">
     <LogoNav />
     <ul
-      class="flex gap-8 h-full text-nowrap whitespace-nowrap items-center font-quicksand w-fit min-w-[600px]"
+      class="flex h-full w-fit items-center gap-8 whitespace-nowrap text-nowrap font-quicksand"
     >
       {
         navLinks.map((navItem: NavLink) =>
           navItem.active ? (
-            <li class="underline">
+            <li class="border-b-2 border-black">
               <a href={navItem.href}>{navItem.label}</a>
             </li>
           ) : (
-            <li class="">
+            <li class="border-b-2 border-transparent transition duration-300 hover:text-gray-500">
               <a href={navItem.href}>{navItem.label}</a>
             </li>
-          )
+          ),
         )
       }
     </ul>

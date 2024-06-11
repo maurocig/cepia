@@ -1,0 +1,74 @@
+---
+import ImageSlider from './ImageSlider';
+
+const images2 = [
+  'chenga-colores.jpg',
+  // 'cocinando.jpg',
+  'collage-girl.jpg',
+  'dibujando-pizarron.jpg',
+  'jenga-cepia.jpg',
+  'juego-colchones.jpg',
+  'juegos-de-mesa.jpg',
+  // "logo-nuevo-cepia.png",
+  // "logo-tipografia.png",
+  'mano-pintada.jpg',
+  'mesa-collage.jpg',
+  'pintando-diarios.jpg',
+  'pintando-vidrios.jpg',
+];
+
+// import changeImage from "../../public/js/changeImage.js";
+// JavaScript
+---
+
+<!-- grid -->
+<div
+  class="grid min-h-[60vh] w-full gap-3 bg-slate-200 transition-all duration-500 md:grid-cols-3 md:grid-rows-3 lg:grid-cols-5"
+>
+  <!-- grid slots -->
+  <ImageSlider
+    images={images2}
+    delay={3000}
+    className="row-span-2"
+    client:load
+  />
+  <div
+    class="col-span-2 h-full w-full bg-green-500 bg-cover bg-center"
+    id="img-slot-2"
+  >
+  </div>
+  <!-- <div class="bg-blue-500 h-full w-full"></div> -->
+  <ImageSlider images={images2} delay={4000} client:load />
+  <div class="h-full w-full bg-yellow-500"></div>
+  <div class="h-full w-full bg-yellow-500"></div>
+  <!-- <div class="bg-pink-500 h-full w-full col-span-2 row-span-2"></div> -->
+  <ImageSlider
+    images={images2}
+    delay={5000}
+    className="col-span-2 row-span-2"
+    client:load
+  />
+  <div class="row-span-2 h-full w-full bg-red-500"></div>
+  <div class="h-full w-full bg-green-500"></div>
+  <div class="h-full w-full bg-red-500"></div>
+  <!-- <div class="bg-green-500 h-full w-full col-span-2"></div> -->
+
+  <script is:inline onload="true">
+    // change images
+    const images = [
+      'chenga-colores.jpg',
+      'cocinando.jpg',
+      'collage-girl.jpg',
+      'dibujando-pizarron.jpg',
+      'jenga-cepia.jpg',
+      'juego-colchones.jpg',
+      'juegos-de-mesa.jpg',
+      // "logo-nuevo-cepia.png",
+      // "logo-tipografia.png",
+      'mano-pintada.jpg',
+      'mesa-collage.jpg',
+      'pintando-diarios.jpg',
+      'pintando-vidrios.jpg',
+    ];
+  </script>
+</div>
